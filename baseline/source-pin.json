@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "state": "unverified-source-baseline",
+  "package": "curl",
+  "target": {
+    "distribution": "Debian",
+    "release": "13",
+    "codename": "trixie",
+    "architecture": "amd64",
+    "sourcePocket": "security"
+  },
+  "source": {
+    "format": "3.0 (quilt)",
+    "version": "8.14.1-2+deb13u7",
+    "publishedAt": "2026-10-13T04:42:41Z",
+    "descriptor": {
+      "name": "curl_8.14.1-2+deb13u7.dsc",
+      "url": "https://snapshot.debian.org/file/a559b829ff852b2ee1ac0e448b5d9c18e0f94875bc820d037609d4d807ac6f57",
+      "sha256": "a559b829ff852b2ee1ac0e448b5d9c18e0f94875bc820d037609d4d807ac6f57",
+      "bytes": 3263
+    },
+    "files": [
+      {
+        "name": "curl_8.14.1.orig.tar.gz",
+        "role": "upstream-source",
+        "url": "https://snapshot.debian.org/file/6766ada7101d292b42b8b15681120acd68effa4a9660935853cf6d61f0d984d4",
+        "sha256": "6766ada7101d292b42b8b15681120acd68effa4a9660935853cf6d61f0d984d4",
+        "bytes": 4250332
+      },
+      {
+        "name": "curl_8.14.1.orig.tar.gz.asc",
+        "role": "upstream-signature",
+        "url": "https://snapshot.debian.org/file/39cc2ec8ddc39d04e3e7101bbed46d858d0875cbb297a6bfa20959fa2bc7d5c7",
+        "sha256": "39cc2ec8ddc39d04e3e7101bbed46d858d0875cbb297a6bfa20959fa2bc7d5c7",
+        "bytes": 488
+      },
+      {
+        "name": "curl_8.14.1-2+deb13u7.debian.tar.xz",
+        "role": "debian-packaging",
+        "url": "https://snapshot.debian.org/file/e0f627ee2b9ae61078b2835edc25c8b94a0b57e180a1bc72dd8636ef260c370b",
+        "sha256": "e0f627ee2b9ae61078b2835edc25c8b94a0b57e180a1bc72dd8636ef260c370b",
+        "bytes": 75756
+      }
+    ]
+  },
+  "provenance": {
+    "signedIndexVerifiedPreviously": true,
+    "verificationEvidenceDate": "2026-11-07",
+    "refreshRequiredBeforeBuild": true,
+    "dscUploaderSignatureVerified": false,
+    "note": "The signed Debian Trixie security InRelease authenticated Sources.xz and the listed archive hashes in the retained earlier preflight. This commit does not contain the verification material; refresh and retain current evidence before use."
+  },
+  "verification": {
+    "sourceFetchAndHashCheck": "pending",
+    "installedUnpatchedAmd64Regression": "pending",
+    "packageBuild": "pending",
+    "patches": []
+  }
+}
