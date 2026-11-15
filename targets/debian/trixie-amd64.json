@@ -50,13 +50,13 @@
   "supportedSourceVersions": [
     "8.14.1-2+deb13u7"
   ],
-  "packageVersion": "8.14.1-2+deb13u7+getpatched1",
-  "releaseSerial": 1,
+  "packageVersion": "8.14.1-2+deb13u7+getpatched2",
+  "releaseSerial": 2,
   "changelog": {
     "distribution": "trixie",
     "urgency": "low",
     "maintainer": "GetPatched Maintainers <packages@getpatched.dev>",
-    "date": "Sun, 15 Nov 2026 18:00:00 +0000"
+    "date": "Sun, 15 Nov 2026 19:20:00 +0000"
   },
   "binaryPackages": [
     "curl",
@@ -71,7 +71,8 @@
     "libcurl4-openssl-dev"
   ],
   "patches": [
-    "cve-2026-94266-debian"
+    "cve-2026-94266-debian",
+    "cve-2026-92391-debian"
   ],
   "releaseAccess": {
     "policy": "public-after-checks",

@@ -42,6 +42,48 @@
           "patchedExpectation": "The same transfer succeeds and reports the final URL without user or password components."
         }
       ]
+    },
+    {
+      "id": "cve-2026-92391-debian",
+      "kind": "security",
+      "file": "CVE-2026-92391-debian.patch",
+      "sha256": "e33600ca894d42c98e6aff1c019147b354b7fd88cd0242cdf88bb4b50b85d4b7",
+      "title": "Free deeply nested MIME structures without recursion",
+      "description": "Port upstream iterative curl_mime_free cleanup to Debian Trixie and retain upstream test 3595.",
+      "license": "curl",
+      "cves": [
+        "CVE-2026-92391"
+      ],
+      "upstream": {
+        "repository": "https://github.com/curl/curl",
+        "commit": "d7546809d5bd548b69ec49fca26565c8f6f0d344",
+        "url": "https://github.com/curl/curl/commit/d7546809d5bd548b69ec49fca26565c8f6f0d344"
+      },
+      "appliesTo": [
+        {
+          "target": "debian-trixie-amd64",
+          "sourceVersion": "8.14.1-2+deb13u7"
+        }
+      ],
+      "dep3": {
+        "origin": "Manual context and allocator port of upstream commit d7546809d5bd548b69ec49fca26565c8f6f0d344; Trixie source uses free() and a different test registration list.",
+        "forwarded": "not-needed; upstream fix is merged",
+        "lastUpdate": "2026-11-15"
+      },
+      "tests": [
+        {
+          "id": "CVE-2026-92391-mime-free-stack-exhaustion",
+          "runner": "tests/regression-92391.py --expect <vulnerable|fixed> (candidate-local; platform verifier support pending)",
+          "fixtures": [
+            {
+              "path": "tests/fixtures/CVE-2026-92391-mime-free-depth.c",
+              "sha256": "314746f4cbb9a9d96435c4b039da2b6a795996d699a1bc6617221c92ab7f960c"
+            }
+          ],
+          "baselineExpectation": "With a 64 KiB child stack, the exact installed vulnerable Trixie libcurl frees depth 50 successfully but is signaled during curl_mime_free at depth 2000 after confirming the tree was constructed.",
+          "patchedExpectation": "The exact same installed patched libcurl returns successfully at depth 2000, with the depth-50 control unchanged."
+        }
+      ]
     }
   ]
 }

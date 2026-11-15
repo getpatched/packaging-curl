@@ -13,3 +13,7 @@ Candidate status: the target-specific patch compiles in a local static OpenSSL s
 - Candidate target: [`targets/debian/trixie-amd64.json`](targets/debian/trixie-amd64.json)
 - Regression: [`tests/regression.py`](tests/regression.py)
 - Source patch: [`patches/CVE-2026-94266-debian.patch`](patches/CVE-2026-94266-debian.patch)
+
+## CVE-2026-92391 candidate
+
+The exact installed Trixie `libcurl4t64` u7 baseline reproduces recursive `curl_mime_free()` stack exhaustion at MIME depth 2,000 with a 64 KiB stack; the depth-50 control passes. The Trixie context port of upstream commit `d7546809d5bd548b69ec49fca26565c8f6f0d344` applies with zero fuzz. A focused patched static source build and depth-2,000 regression pass; this is not a Debian package build or installed patched package. This candidate is stacked on draft PR #1 and is not counted. No Debian `.deb` candidate, package suite, compatibility, scans, hosted verifier/CI, independent review, signed APT or merge is complete.
