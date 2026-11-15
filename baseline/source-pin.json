@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "state": "unverified-source-baseline",
+  "state": "unpatched-installed-baseline-reproduced; package build pending",
   "package": "curl",
   "target": {
     "distribution": "Debian",
@@ -45,14 +45,14 @@
   },
   "provenance": {
     "signedIndexVerifiedPreviously": true,
-    "verificationEvidenceDate": "2026-11-07",
-    "refreshRequiredBeforeBuild": true,
+    "verificationEvidenceDate": "2026-11-15",
+    "refreshRequiredBeforeBuild": false,
     "dscUploaderSignatureVerified": false,
-    "note": "The signed Debian Trixie security InRelease authenticated Sources.xz and the listed archive hashes in the retained earlier preflight. This commit does not contain the verification material; refresh and retain current evidence before use."
+    "note": "Current signed Debian trixie, trixie-updates, and trixie-security indexes were refreshed in the isolated amd64 container on 2026-11-15. Exact u7 source files were fetched and SHA-256 values match the signed Sources stanza. The .dsc uploader signature was not separately verified."
   },
   "verification": {
-    "sourceFetchAndHashCheck": "pending",
-    "installedUnpatchedAmd64Regression": "pending",
+    "sourceFetchAndHashCheck": "passed against current signed Sources stanza",
+    "installedUnpatchedAmd64Regression": "passed; see baseline/verification.json and baseline/regression/",
     "packageBuild": "pending",
     "patches": []
   }

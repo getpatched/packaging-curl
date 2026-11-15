@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "candidate": "CVE-2026-107929",
+  "state": "unpatched-installed-baseline-reproduced",
+  "target": "debian-trixie-amd64",
+  "installedPackages": {
+    "curl": "8.14.1-2+deb13u7",
+    "libcurl4t64:amd64": "8.14.1-2+deb13u7"
+  },
+  "architecture": "amd64",
+  "sourceIndex": "current signed Debian Trixie and Trixie Security indexes refreshed 2026-11-15; apt rejected invalid snapshot TLS and then used only configured Debian sources",
+  "sourceArchiveHashCheck": "passed; matches signed Sources stanza",
+  "dscUploaderSignature": "not separately verified",
+  "regression": {
+    "differentBinding": "host!127.0.0.1 then host!127.0.0.2 reused one connection; both requests originated from 127.0.0.1, demonstrating the vulnerability",
+    "sameBindingControl": "same host binding reused one connection as expected",
+    "freshBindingControl": "fresh host!127.0.0.2 request originated from 127.0.0.2 as expected",
+    "rawReport": "baseline/regression/baseline-result.json"
+  },
+  "packageBuild": "pending",
+  "candidateFix": "not included on baseline branch"
+}
