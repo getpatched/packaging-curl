@@ -1,0 +1,1 @@
+GetPatched curl smoke test

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 3,
+  "patches": [
+    {
+      "id": "cve-2026-94266-debian",
+      "kind": "security",
+      "file": "CVE-2026-94266-debian.patch",
+      "sha256": "37f5a982aad37773a22229242b7c275f939f5c487c0696878df81941a3c3b280",
+      "title": "Strip credentials from CURLINFO_EFFECTIVE_URL",
+      "description": "Backport upstream credential removal for effective URLs after .netrc authentication and redirects.",
+      "license": "MIT",
+      "cves": [
+        "CVE-2026-94266"
+      ],
+      "upstream": {
+        "repository": "https://github.com/curl/curl",
+        "commit": "7a6bd027d0de2b6857472d35da090ef60cc29f19",
+        "url": "https://github.com/curl/curl/commit/7a6bd027d0de2b6857472d35da090ef60cc29f19"
+      },
+      "appliesTo": [
+        {
+          "target": "debian-trixie-amd64",
+          "sourceVersion": "8.14.1-2+deb13u7"
+        }
+      ],
+      "dep3": {
+        "origin": "Manual context port of upstream commit 7a6bd027d0de2b6857472d35da090ef60cc29f19; zero-fuzz application verified against Debian Trixie curl 8.14.1-2+deb13u7.",
+        "forwarded": "not-needed; upstream fix is merged",
+        "lastUpdate": "2026-11-15"
+      },
+      "tests": [
+        {
+          "id": "installed-file-transfer",
+          "runner": "ci/debian-trixie-amd64/smoke.sh",
+          "fixtures": [
+            {
+              "path": "tests/fixtures/file-transfer.txt",
+              "sha256": "06b8e2f9a3ab0fa55eb0eda11e7e377c3636d826baa70beda5e5a89110d26499"
+            }
+          ],
+          "patchedExpectation": "The installed curl CLI copies the local fixture byte for byte."
+        }
+      ]
+    }
+  ]
+}

@@ -1,15 +1,9 @@
-# GetPatched curl baseline
+# GetPatched curl packaging
 
-This repository starts with an unpatched Debian Trixie amd64 source baseline for curl. It contains no GetPatched CVE patches and no binary packages.
+This recipe builds curl for Debian Trixie amd64 from source `8.14.1-2+deb13u7`. It backports upstream commit `7a6bd027d0de2b6857472d35da090ef60cc29f19` for CVE-2026-94266.
 
-## Baseline state
+GitHub Actions builds the patched Debian packages, verifies a signed APT install, runs the installed curl CLI and libcurl SDK checks, and compares advisory scans of the pinned baseline and candidate.
 
-- Source package: `curl 8.14.1-2+deb13u7`
-- Target: Debian Trixie (`trixie`), amd64
-- Source pocket: Debian Security
-- Source archive pins and prior signed-index provenance: [`baseline/source-pin.json`](baseline/source-pin.json)
-- Current verification state: **installed unpatched baseline regression verified; package build pending**
-
-The source pin was refreshed from current signed Debian indexes on 15 November 2026, and all exact source archive hashes match the signed Sources stanza. The `.dsc` uploader signature was not separately authenticated. The exact installed amd64 unpatched regression is retained under `baseline/regression/`; the package build remains pending. The platform verifier currently has no Curl target support, so patched package acceptance remains unavailable through that workflow.
-
-No CVE remediation is claimed. Do not treat this source-only baseline record as a verified package or release. Production binaries, repository indexes, and releases are out of scope.
+- [Source pin](baseline/source-pin.json)
+- [Trixie packaging target](targets/debian/trixie-amd64.json)
+- [Backport](patches/CVE-2026-94266-debian.patch)
