@@ -30,6 +30,16 @@
       {
         "path": "patches/CVE-2026-94266-debian.patch",
         "spdx": "MIT"
+      },
+      {
+        "path": "patches/CVE-2026-92391-debian.patch",
+        "spdx": "curl",
+        "licenseFile": "LICENSES/curl-COPYING"
+      },
+      {
+        "path": "tests/fixtures/CVE-2026-92391-mime-free-depth.c",
+        "spdx": "MIT",
+        "licenseFile": "LICENSE"
       }
     ],
     "earlyBinaryLicenseId": null,
