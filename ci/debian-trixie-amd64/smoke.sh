@@ -5,3 +5,5 @@ trap 'rm -rf "$work"' EXIT
 cp "$(dirname "$0")/../../tests/fixtures/file-transfer.txt" "$work/input"
 curl --silent --show-error --fail --proto '=file' "file://$work/input" --output "$work/output"
 cmp "$work/input" "$work/output"
+printf '%s\n' 'Intentional failure to verify the required Package CI check' >&2
+exit 1
