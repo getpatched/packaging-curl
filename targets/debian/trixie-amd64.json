@@ -15,7 +15,7 @@
     "publishedAt": "2026-10-13T04:42:41Z",
     "descriptor": {
       "name": "curl_8.14.1-2+deb13u7.dsc",
-      "url": "https://snapshot.debian.org/file/a559b829ff852b2ee1ac0e448b5d9c18e0f94875bc820d037609d4d807ac6f57",
+      "url": "https://snapshot.debian.org/file/a52b26b71ab211b478dbcd7c1399578b52d912d4",
       "sha256": "a559b829ff852b2ee1ac0e448b5d9c18e0f94875bc820d037609d4d807ac6f57",
       "bytes": 3263
     },
@@ -23,21 +23,21 @@
       {
         "name": "curl_8.14.1.orig.tar.gz",
         "role": "upstream-source",
-        "url": "https://snapshot.debian.org/file/6766ada7101d292b42b8b15681120acd68effa4a9660935853cf6d61f0d984d4",
+        "url": "https://snapshot.debian.org/file/d84a4b8baf1baaca33e31e809f5e770deb727c2f",
         "sha256": "6766ada7101d292b42b8b15681120acd68effa4a9660935853cf6d61f0d984d4",
         "bytes": 4250332
       },
       {
         "name": "curl_8.14.1.orig.tar.gz.asc",
         "role": "upstream-signature",
-        "url": "https://snapshot.debian.org/file/39cc2ec8ddc39d04e3e7101bbed46d858d0875cbb297a6bfa20959fa2bc7d5c7",
+        "url": "https://snapshot.debian.org/file/c892a3257a40081f754b33e6a10eca2453860307",
         "sha256": "39cc2ec8ddc39d04e3e7101bbed46d858d0875cbb297a6bfa20959fa2bc7d5c7",
         "bytes": 488
       },
       {
         "name": "curl_8.14.1-2+deb13u7.debian.tar.xz",
         "role": "debian-packaging",
-        "url": "https://snapshot.debian.org/file/e0f627ee2b9ae61078b2835edc25c8b94a0b57e180a1bc72dd8636ef260c370b",
+        "url": "https://snapshot.debian.org/file/9fa1a72b0d02518e702f769134015c878717c56c",
         "sha256": "e0f627ee2b9ae61078b2835edc25c8b94a0b57e180a1bc72dd8636ef260c370b",
         "bytes": 75756
       }
