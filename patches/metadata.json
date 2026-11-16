@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 3,
+  "patches": [
+    {
+      "id": "cve-2026-94266-debian",
+      "kind": "security",
+      "file": "CVE-2026-94266-debian.patch",
+      "sha256": "95cddf0cbe5521fecd3cf901f0a4087d407ec468b037274cd0cb0f66e6e1bd30",
+      "title": "Strip credentials from CURLINFO_EFFECTIVE_URL",
+      "description": "Backport upstream credential removal for effective URLs after .netrc authentication and redirects.",
+      "license": "MIT",
+      "cves": [
+        "CVE-2026-94266"
+      ],
+      "upstream": {
+        "repository": "https://github.com/curl/curl",
+        "commit": "7a6bd027d0de2b6857472d35da090ef60cc29f19",
+        "url": "https://github.com/curl/curl/commit/7a6bd027d0de2b6857472d35da090ef60cc29f19"
+      },
+      "appliesTo": [
+        {
+          "target": "debian-trixie-amd64",
+          "sourceVersion": "8.14.1-2+deb13u7"
+        }
+      ],
+      "dep3": {
+        "origin": "Manual context port of upstream commit 7a6bd027d0de2b6857472d35da090ef60cc29f19; zero-fuzz application verified against Debian Trixie curl 8.14.1-2+deb13u7.",
+        "forwarded": "not-needed; upstream fix is merged",
+        "lastUpdate": "2026-11-15"
+      },
+      "tests": [
+        {
+          "id": "CVE-2026-94266-netrc-redirect-effective-url",
+          "runner": "tests/regression.py (candidate-local; platform verifier support pending)",
+          "fixtures": [
+            {
+              "path": "tests/fixtures/CVE-2026-94266-netrc-redirect.json",
+              "sha256": "66ba101177fcf91de1ebe34662cf5f3c0b4f4af9c465ae7069ed71e726b9a13b"
+            }
+          ],
+          "baselineExpectation": "With a local 301 redirect and .netrc fixture, exact installed vulnerable curl returns an effective URL containing the fixture credentials.",
+          "patchedExpectation": "The same transfer succeeds and reports the final URL without user or password components."
+        }
+      ]
+    }
+  ]
+}

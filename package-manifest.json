@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 3,
+  "project": {
+    "name": "GetPatched",
+    "repository": "getpatched/packaging-curl",
+    "description": "Target-specific curl security maintenance recipe."
+  },
+  "package": {
+    "source": "curl",
+    "description": "Command line tool and library for transferring data with URLs.",
+    "upstreamProject": "curl",
+    "upstreamRepository": "https://github.com/curl/curl",
+    "copyrightFile": "LICENSES/debian-copyright"
+  },
+  "targets": [
+    {
+      "id": "debian-trixie-amd64",
+      "file": "targets/debian/trixie-amd64.json"
+    }
+  ],
+  "patchMetadata": "patches/metadata.json",
+  "regressionTests": {
+    "fixturesDirectory": "tests/fixtures",
+    "runner": "tests/regression.py"
+  },
+  "licensing": {
+    "publicContributionsSpdx": "MIT",
+    "publicContributionsLicenseFile": "LICENSE",
+    "fileLicenses": [
+      {
+        "path": "patches/CVE-2026-94266-debian.patch",
+        "spdx": "MIT"
+      }
+    ],
+    "earlyBinaryLicenseId": null,
+    "earlyBinaryTermsFile": null,
+    "upstreamCopyrightFile": "LICENSES/debian-copyright",
+    "upstreamLicenses": "preserve"
+  }
+}

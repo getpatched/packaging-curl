@@ -1,15 +1,15 @@
-# GetPatched curl baseline
+# GetPatched curl packaging candidate
 
-This repository starts with an unpatched Debian Trixie amd64 source baseline for curl. It contains no GetPatched CVE patches and no binary packages.
+This repository contains a clean unpatched Debian Trixie amd64 baseline and target-specific development recipes for curl.
 
-## Baseline state
+## CVE-2026-94266 candidate
 
-- Source package: `curl 8.14.1-2+deb13u7`
-- Target: Debian Trixie (`trixie`), amd64
-- Source pocket: Debian Security
-- Source archive pins and prior signed-index provenance: [`baseline/source-pin.json`](baseline/source-pin.json)
-- Current verification state: **installed unpatched baseline regression verified; package build pending**
+The candidate backports upstream commit `7a6bd027d0de2b6857472d35da090ef60cc29f19` to source `8.14.1-2+deb13u7`. The exact installed vulnerable baseline was reproduced using a loopback HTTP redirect and synthetic `.netrc` credentials; `CURLINFO_EFFECTIVE_URL` exposed those credentials. Patch application was checked with zero fuzz.
 
-The source pin was refreshed from current signed Debian indexes on 15 November 2026, and all exact source archive hashes match the signed Sources stanza. The `.dsc` uploader signature was not separately authenticated. The exact installed amd64 unpatched regression is retained under `baseline/regression/`; the package build remains pending. The platform verifier currently has no Curl target support, so patched package acceptance remains unavailable through that workflow.
+Candidate status: the target-specific patch compiles in a local static OpenSSL source build, and the focused patched-source regression passes. This is not a Debian `.deb` build or installed patched package. The Debian package build, package test suite, installed patched regression, compatibility, scans, hosted verifier/CI, independent review, signed APT and merge remain pending. Do not count this CVE as verified or publish production artifacts.
 
-No CVE remediation is claimed. Do not treat this source-only baseline record as a verified package or release. Production binaries, repository indexes, and releases are out of scope.
+- Baseline provenance: [`baseline/source-pin.json`](baseline/source-pin.json)
+- Retained baseline result: [`baseline/verification.json`](baseline/verification.json)
+- Candidate target: [`targets/debian/trixie-amd64.json`](targets/debian/trixie-amd64.json)
+- Regression: [`tests/regression.py`](tests/regression.py)
+- Source patch: [`patches/CVE-2026-94266-debian.patch`](patches/CVE-2026-94266-debian.patch)
