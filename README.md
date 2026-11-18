@@ -7,3 +7,5 @@ GitHub Actions builds the patched Debian packages, verifies a signed APT install
 - [Source pin](baseline/source-pin.json)
 - [Trixie packaging target](targets/debian/trixie-amd64.json)
 - [Backport](patches/CVE-2026-94266-debian.patch)
+
+[![advertisement](https://ads.servead.net/i/4f8885b6-55a6-42d8-aaf1-1c1741a51698.svg)](https://ads.servead.net/c/4f8885b6-55a6-42d8-aaf1-1c1741a51698)
